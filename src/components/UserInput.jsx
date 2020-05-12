@@ -5,9 +5,9 @@ class UserInput extends Component{
 
     render(){
         return (
-            <p>
+            <div>
                 <Input placeholder="User Input" onChange = {this.props.onChange}></Input>
-            </p>
+            </div>
         );
     };
 
