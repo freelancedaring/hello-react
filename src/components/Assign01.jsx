@@ -34,7 +34,8 @@ class Assign01 extends Component{
             <div>
                 <DatePicker style={{ marginLeft: 8, marginBottom: 8 }} onChange= {this.showMyDate}/>
                 <UserInput onChange= {this.passTheValue}></UserInput>
-                <UserOutput p1= {this.state.FirstName} p2= {this.state.LastName}></UserOutput>
+                <UserOutput data= {this.state.FirstName}></UserOutput>
+                <UserOutput data= {this.state.LastName}></UserOutput>
             </div>
             </div>
         );
