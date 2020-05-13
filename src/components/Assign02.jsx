@@ -23,32 +23,20 @@ class Assign02 extends Component{
     }
     removeCurrentLetter = (index) => {
         let arr = this.splitter();
-        console.log(arr[index]);
-        let newText = "";
-        arr.forEach( (el, idx) =>{
-            if( idx !== index ){
-                newText = newText + el +  this.delim
-            }
-        })
+        arr.splice(index)
+        let newText = arr.join(this.delim)
         this.setState({
             text : newText.trimRight()
         });
 
     }
     listOfCharComponent = () => {
-        let tmpText = this.state.text;
         let split = this.splitter();
-        console.log("["+tmpText+"]");
-        console.log(split);
-        let all = [];
-        split.forEach((element, index) => {
-            if(!(index === 0 && element === "")){
-                all.push(
-                    <CharComponent key={index} data={element} onClick={() => this.removeCurrentLetter(index)}/>
-                );    
+        return split.map((element, index) => {
+            if( !(element === "" && index === 0) ){
+                return <CharComponent key={index} data={element} onClick={() => this.removeCurrentLetter(index)}/>;
             }
         });
-        return all;
     }
 
     
@@ -62,7 +50,7 @@ class Assign02 extends Component{
                     <UserOutput key="text_length" data={this.state.textLength}></UserOutput>
                 </div>
                 <div>
-                    <TextArea rows={3} onChange={this.countLength}></TextArea>
+                    <TextArea rows={3} onChange={this.countLength} value={this.state.text}></TextArea>
                 </div>
                 <div>
                     <ValidationLength length={this.state.textLength}></ValidationLength>
