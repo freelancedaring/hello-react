@@ -5,9 +5,9 @@ const GlobalStyleRoot = {
       width: "80%",
       margin: "16px auto",
       border: "1px solid #eee",
-      "box-shadow": "0 2px 3px #ccc",
+      boxShadow: "0 2px 3px #ccc",
       padding: "16px",
-      "text-align": "center"
+      textAlign : "center"
     };
 
 export const GlobalStyle = GlobalStyleRoot; 
