@@ -1,17 +1,22 @@
 import React, {Component} from "react";
+import Radium from 'radium';
 
-class STitle extends Component{
-    state = {
+const style = {
+    color: "black",
+    // this semantic is using Radium
+    ":hover": {
+        backgroundColor: "grey"
     }
-        
+};
+class STitle extends Component{
     render(){
         return (
             <div>
-                <h1>{this.props.title}</h1>
+                <h1 style={style}>{this.props.title}</h1>
             </div>
         );
     };
 
 }
 
-export default STitle;
+export default Radium(STitle);

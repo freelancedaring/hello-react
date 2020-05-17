@@ -3,7 +3,9 @@ import {DatePicker} from "antd";
 import UserInput from './UserInput.jsx';
 import UserOutput from './UserOutput.jsx';
 import STitle from './STitle.jsx'
-
+import Radium, {StyleRoot} from 'radium';
+import {GlobalStyle} from './GlobalVars.jsx'
+  
 class Assign01 extends Component{
     state = {
         FirstName: "first name",
@@ -27,20 +29,22 @@ class Assign01 extends Component{
     
     render(){
         return (
-            <div>
-            <div>
-                <STitle title="Assignment 01"></STitle>
-            </div>
-            <div>
-                <DatePicker style={{ marginLeft: 8, marginBottom: 8 }} onChange= {this.showMyDate}/>
-                <UserInput onChange= {this.passTheValue}></UserInput>
-                <UserOutput data= {this.state.FirstName}></UserOutput>
-                <UserOutput data= {this.state.LastName}></UserOutput>
-            </div>
-            </div>
+            <StyleRoot>
+                <div style={GlobalStyle}>
+                    <div>
+                        <STitle title="Assignment 01"></STitle>
+                    </div>
+                    <div>
+                        <DatePicker style={{ marginLeft: 8, marginBottom: 8 }} onChange= {this.showMyDate}/>
+                        <UserInput onChange= {this.passTheValue}></UserInput>
+                        <UserOutput data= {this.state.FirstName}></UserOutput>
+                        <UserOutput data= {this.state.LastName}></UserOutput>
+                    </div>
+                </div>
+            </StyleRoot>
         );
     };
 
 }
 
-export default Assign01;
+export default Radium(Assign01);

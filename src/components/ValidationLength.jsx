@@ -1,20 +1,14 @@
 import React, {Component} from "react";
 
-class ValidationLength extends Component{
+// props can be directly as a parameter for the body
+const ValidationLength = (props) => {
 
-    state = {
-        length : 0
-    }
-    renderLengthValidation = (length) => {
-        return (length > 5) ? "Too Long" : ((length < 5) ? "Too Short" : "Exact");
-    }
-    render(){
-        return (
-            <div>
-                <p className="ValidationLength">{this.renderLengthValidation(this.props.length)}</p>
-            </div>
-        );
-    };
+    let message = (props.length > 5) ? "Too Long" : ((props.length < 5) ? "Too Short" : "Exact");
+    return (
+        <div>
+            <p className="ValidationLength">{message}</p>
+        </div>
+    );
 
 }
 
