@@ -1,14 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 import Radium from 'radium';
 import styled from 'styled-components';
-const style = {
-    color: "black",
-    // this semantic is using Radium
-    ":hover": {
-        backgroundColor: "grey"
-    }
-};
-
 // styled component will be using all plain css on its template, not the on like the css above
 // backgroundColor vs background-color
 const StyledTitle =styled.h1`
@@ -16,14 +8,14 @@ const StyledTitle =styled.h1`
     &:hover {
         background-color: grey
     };
-`;
-class STitle extends Component{
-    render(){
-        return (
-            <StyledTitle> {this.props.title} </StyledTitle>
-        );
-    };
+    `;
+// instead of doing it as a class component, we just make a functional component
+// since we are not managing any state and use no lifecycle
 
+const STitle = (props) => {
+    return (
+        <StyledTitle> {props.title} </StyledTitle>
+    )
 }
 
 export default Radium(STitle);

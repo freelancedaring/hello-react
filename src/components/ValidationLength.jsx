@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 
 // props can be directly as a parameter for the body
 const ValidationLength = (props) => {

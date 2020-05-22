@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import './CharComponent.css';
 
 // props can be directly as a parameter for the body
@@ -6,18 +6,18 @@ const CharComponent = (props) => {
         const style = {
             display: "inline-block",
             padding: "16px",
-            "text-align": "center",
+            textAlign: "center",
             margin: "16px",
             border: "1px solid black",
-            "background-color": "green",
+            backgroundColor: "green",
             color: "white"
         };
         if(props.data.length < 5){
-            style["background-color"] = "yellow";
+            style.backgroundColor = "yellow";
             style.color = "red";
         }
         if(props.data.length > 5){
-            style["background-color"] = "red";
+            style.backgroundColor = "red";
             style.color = "white";
         }
     return (

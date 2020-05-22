@@ -1,17 +1,16 @@
-import React, {Component} from "react";
+import React from "react";
 import { Input } from 'antd';
 import "./UserInput.css"
 
-class UserInput extends Component{
+// instead of doing it as a class component, we just make a functional component
+// since we are not managing any state and use no lifecycle
 
-    render(){
-        return (
-            <div>
-                <Input className="UserInput" placeholder="User Input" onChange = {this.props.onChange}></Input>
-            </div>
-        );
-    };
-
+const UserInput = (props) => {
+    return (
+        <div>
+            <Input className="UserInput" placeholder="User Input" onChange = {props.onChange}></Input>
+        </div>
+    )
 }
 
 export default UserInput;

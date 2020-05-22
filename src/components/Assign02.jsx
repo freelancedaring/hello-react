@@ -37,6 +37,8 @@ class Assign02 extends Component {
         return split.map((element, index) => {
             if (!(element === "" && index === 0)) {
                 return <CharComponent key={index} data={element} onClick={() => this.removeCurrentLetter(index)} />;
+            }else{
+                return null;
             }
         });
     }

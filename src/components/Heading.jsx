@@ -1,11 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Heading extends Component{
-
-    render(){
-        return (<h2>{this.props.hello}</h2>);
-    };
-
+// instead of doing it as a class component, we just make a functional component
+// since we are not managing any state and use no lifecycle
+const Heading = (props) => {
+    return (<h2>{props.hello}</h2>);
 }
 
 export default Heading;
